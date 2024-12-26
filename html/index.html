@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Bootstrap core CSS -->
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="/css/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/redmond/jquery-ui.min.css"></link>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+  <!-- <script src="/js/jquery.cookie.js"></script> -->
+  <script src="/js/mustache.js"></script>
+  <script type="text/javascript" src="/js/task.js"></script>
+  <!-- <script type="text/javascript" src="/js/turnpage.js"></script> -->
+  <title>CU Boulder Legal Decision Making Study</title>
+
+</head>
+<body>
+  <div id="cover">
+  <div class="jumbotron">
+    <div class="container" id="base_descr" style="max-width:900px"></div>
+    <script id="base" type="text/template">
+      <p>{{base}}</p>
+    </script>
+
+    <div class="container" id="evid_descr" style="max-width:900px"></div>
+    <script id="evidence" type="text/template">
+
+      <ul>
+        {{#piece}}
+        <li><p>{{text}}</p></li>
+        {{/piece}}
+      </ul>
+      <!-- <div class="text" type="text/template">{{text}}</div> -->
+    </script>
+
+    <p class="container capstone" style="max-width:900px"><b>The investigations by the prosecution and defense produced no further
+      evidence relevant to the case.</b></p>
+  </div>
+
+  <br>
+  <br>
+
+  <div class="container" id="questions">
+
+    <br><br><br>
+
+      <p>How strong is the case against the accused?</p>
+      <p class="capstone"> <b>Remember, you have seen all the evidence for this case.</b> </p>
+      <p class="slider" id="tooshort">Very weak </p>
+      <div class="ui-slider slider" id="rating"></div>
+      <p class="slider">Very strong</p>
+      <br>
+      <hr>
+
+      <p>How similar is this case to a specific event or story that you can remember?</p>
+      <p class="slider" id="tooshort">Not similiar at all </p>
+     <div class="ui-slider slider" id="recall"></div>
+     <p class="slider">Very similiar</p>
+     <hr>
+
+     <p>How much do you know about cases like this one?</p>
+     <p class="slider" id="tooshort">Not knowledgeable at all </p>
+     <div class="ui-slider slider" id="know"></div>
+     <p class="slider">Very knowledgeable</p>
+     <hr>
+
+     <p>How realistic is this case compared to crimes that can occur?</p>
+    <p class="slider" id="tooshort">Not realistic at all </p>
+    <div class="ui-slider slider" id="realrate"></div>
+    <p class="slider">Very realistic</p>
+    <hr>
+    
+      <div class="question" id="mltn">
+        <p>Based on the evidence presented, do you think it is more likely than
+          not that the defendant committed the crime in question?</p>
+        <p class="capstone"> <b>Remember, you have seen all the evidence for this case.</b> </p>
+        <div class="radio">
+          <label><input type="radio" name="mltn" id="yes_guilty" value=true>
+            Yes, it is more likely than not that the defendant committed the crime.</label>
+          </div>
+        <div class="radio">
+          <label><input type="radio" name="mltn" id="no_guilty" value=false>
+            No, it is not more likely than not that the defendant committed the crime. </label>
+        </div>
+        <br>
+        <hr>
+      </div>
+    
+      <div class="question" id="bard">
+        <p>Would you, as a juror, vote to find the defendant guilty or not guilty beyond a reasonable doubt?</p>
+        <p class="capstone"> <b>Remember, you have seen all the evidence for this case.</b> </p>
+        <div class="radio">
+          <label><input type="radio" name="bard" id="yes_guilty" value=true>
+            Guilty.</label>
+        </div>
+        <div class="radio">
+          <label><input type="radio" name="bard" id="no_guilty" value=false>
+              Not guilty. </label>
+        </div>
+        <br>
+        <hr>
+      </div>
+      
+      <div class="question" id="subj">
+        <p>Do you personally believe that the defendant committed the crime in question?</p>
+        <p class="capstone"> <b>Remember, you have seen all the evidence for this case.</b> </p>
+        <div class="radio">
+          <label><input type="radio" name="subj" id="yes_guilty" value=true>
+            Yes, I believe the defendant committed the crime.</label>
+        </div>
+        <div class="radio">
+          <label><input type="radio" name="subj" id="no_guilty" value=false>
+            No, I do not believe the defendant committed the crime. </label>
+        </div>
+        <br>
+        <hr>
+      </div>
+
+      <div class="question" id="catch">
+        
+      </div>
+
+      <br><br><br>
+
+    </div>
+
+    <br><br>
+
+    <div class="container center">
+      <a class="btn btn-primary btn-lg" role="button" id="moveon" style="margin: auto"> 
+        Next Scenario &raquo;</a>
+    </div>
+  </div>
+
+</body>
+</html>

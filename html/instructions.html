@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Bootstrap core CSS -->
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="/css/login.css" rel="stylesheet">
+  <link href="/css/style.css" rel="stylesheet">
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+  <script type="text/javascript" src="/js/instructions.js"></script>
+  <script type="text/javascript" src="/js/turnpage.js"></script>
+
+ <!-- <script src="/js/jquery.cookie.js"></script> -->
+ <title>CU Boulder Legal Decision-Making Study</title>
+</head>
+<body>
+  <div class="instructions">
+    <div class="page" id="page1" style="display:show">
+      <h2>Welcome to the CU Boulder Legal Decision-Making Study</h2>
+      <br>
+      <p>You are about to read a series of short descriptions of fictitious criminal cases.
+        As you read each case, imagine that you are a juror at a trial of the person accused.
+        After you have read each case, you will be asked several questions about how you would believe and act as a juror for that case.
+      </p>
+
+      <p>Please read through the following instructions carefully before begining the survey.<p>
+
+      <p>Each case will begin with a short paragraph describing the accusation and a brief description of the crime.
+      You should regard these as an opening statement from the prosecution, summarizing its version of events.
+      Assume that the defendant has entered a plea of "not guilty."
+      Following the description of the crime, you will see a list of all the evidence presented at trial.</p>
+
+      <p>On the next page, we will describe the instructions you recieve as a juror, and after that
+        we will describe the questions we will ask you about each case.</p>
+    </div>
+
+    <div id="page2" class="page">
+      <h2>Instructions for the Jury</h2>
+      <br>
+      Following the trial, assume the judge gives you the following instructions:
+      <br>
+      <br>
+        <h4><b>WEIGHT OF THE EVIDENCE</b></h4>
+        <p>You, the jurors, are the sole judges of the weight to be given any evidence.
+          If you decide that certain evidence is believable you must then determine the
+          importance of that evidence in light of all other believable evidence in the case.
+        </p>
+
+        <h4><b>BURDEN OF PROOF AND REASONABLE DOUBT</b></h4>
+        <p>The fact that the defendant has been charged is no evidence of guilt.
+          Under our system of justice, when a defendant pleads "not guilty," the defendant is not required to prove the defendant’s innocence;
+          the defendant is presumed to be innocent.
+          The State must prove to you that the defendant is guilty beyond a reasonable doubt.
+        </p>
+
+        <p>A reasonable doubt is a doubt based on reason and common sense, arising out of some or all of the evidence that has been presented, or lack or insufficiency of the evidence, as the case may be.
+          Proof beyond a reasonable doubt is proof that fully satisfies or entirely convinces you of the defendant's guilt.
+        </p>
+    </div>
+
+    <div id="page3" class="page">
+      <h2>Judgments about the case</h2>
+      <br>
+      <p id="plural">With the instructions from the judge in mind, we will ask you to answer the following questions for each case presentation. Each case presentation includes a short description of the crime and the evidence that follows it. To answer these questions, move the slider to a position between "not" and "very" that best reflects your judgment.</p>
+      <p id="singular">With the instructions from the judge in mind, we will ask you to answer the following question:</p>
+      <br>
+      <div class="instruction" id="csRating">
+        <p><i>How strong is the case against the accused?</i></p>
+        <p class=indented>To answer this question, please rate the extent to which you think the case supports the prosecutor’s accusation and that the accused committed this crime.</p>
+        <br>
+      </div>
+      <div class="instruction" id="recall">
+        <p><i>How similar is this case to a specific event or story that you can remember?</i></p>
+        <p class=indented>To answer this question, please rate the extent to which you can recall a similar event in explicit detail. For example, “I remember my last birthday party. I can clearly where it took place, who was there, and what we did” would qualify as a strong rating for this question. </p>
+        <br>
+      </div>
+      <!-- <div class="instruction" id="fam">
+        <p><i>How much of a general sense of familiarity do you have for this case?</i></p>
+        <p class=indented>To answer this question, please rate the extent to which you have a general memory of similar types of cases, NOT including memories with explicit details or your knowledge of this type of event. For example, “I feel like that birthday party was very similar to others but I don’t remember where we were or what we did.” would qualify as a strong rating for this question. </p>
+        <br>
+      </div> -->
+      <div class="instruction" id="know">
+        <p><i>How much do you know about cases like this one?</i></p>
+        <p class=indented>To answer this question, please rate the extent to which you are knowledgeable about a similar event, NOT including memories of a specific event that you can envision or a vague memory for a similar event. For example, “I can write a list of events that usually happen at birthday parties and where parties usually occur.” would qualify as a strong rating for this question.</p>
+        <br>
+      </div>
+      <div class="instruction" id="realrate">
+        <p><i>How realistic is this case compared to crimes that can occur? </i></p>
+        <p class=indented>To answer this question, please rate the extent to which you think a case like this one would have occurred as we described it. For example, “I could definitely believe that story about your birthday happened,” would qualify as a strong rating for this question. </p>
+        <br>
+      </div>
+      <div class="instruction" id="bard">
+        <p><i>Would you, as a juror, vote to find the defendant guilty or not guilty
+          beyond a reasonable doubt?</i></p>
+        <p class=indented> If you feel that the prosecution has met its burden of
+          proving the defendant guilty beyond a reasonable doubt, you should answer “guilty”.
+          If not, you should answer “not guilty”.</p>
+        <br>
+          <p>NOTE: This task has been extensively tested on Safari and Google Chrome. We strongly reccomend that you use either either Safari or Google Chrome complete it. This task also uses cookies. Please make sure that cookies are enabled. </p>
+        <br>
+      </div>
+      <div class="instruction" id="subj">
+        <p><i>Do you personally believe that the defendant committed the crime in question?</i></p>
+        <p class=indented>In answering this question, we only want to know your personal opinion.</p>
+        <br>
+      </div>
+    </div>
+
+    <div id="page4" class="page">
+      <h2>Comprehension checks</h2>
+      <br>
+      <p>To check whether you are paying attention to the cases, we will periodically ask you a comprehension question regarding the case you just read.
+        In these questions you will asked to identify an element of the preceding case, such as the crime committed or a piece of evidence present, and pick it out from among elements that were not.
+      </p>
+
+      <p>The task will end if you answer three comprehension questions incorrectly.
+        If this happens, you will be eligible for the baseline payment but not completion bonus, as described in Prolific.
+      </p>
+      <br>
+      <p>Thank you for reading the instructions. When ready, please press the button below to begin the survey.
+        <br>
+    </div>
+  </div>
+
+  <br>
+
+  <div class="container center">
+    <button type="button" id="back" style="margin:0 10px 0 0">Previous page</button>
+    <div id="pagenumber" style="display:inline"></div>
+    <button type="button" id="next" style="margin:0 0 0 10px">Next page</button>
+  </div>
+
+  <div class="container">
+    <div class="form-signin" role="form">
+      <button class="btn btn-lg btn-primary btn-block" type="button" id="moveon">Begin survey</button>
+    </div>
+  </div>
+</body>
+</html>

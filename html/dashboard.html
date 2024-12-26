@@ -1,0 +1,29 @@
+<html>
+<head>
+  <title>Analytics Dashboard</title>
+  <script src="http://trifacta.github.io/vega/lib/d3.v3.min.js"></script>
+  <script src="http://trifacta.github.io/vega/lib/d3.geo.projection.min.js"></script>
+  <!-- <script src="http://trifacta.github.io/vega/vega.js"></script> -->
+  <script src="/js/vega.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script src="/js/mustache.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body style="background-color: #eee">
+  <script id="graphs" type="text/template">
+  {{#graph}}
+  <div class="jumbotron col-md-6">
+  <p align="center">{{title}}</p>
+  <div id={{function}}> </div>
+  </div>
+  {{/graph}}
+  </script>
+  <div id="graphsection"></div>
+  <div class="col-md-12 container">
+  <form role="form" action="/dashboard_logout" method="get">
+    <button class="btn btn-lg btn-primary" type="submit">Logout</button> 
+  </form>
+</div>
+</body>
+<script src="/js/dashboard.js"></script>
+</html>

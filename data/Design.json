@@ -1,0 +1,22 @@
+{
+   "database": "capstone_prolific",
+   "num_scenarios": 31,
+   "catch_trials": [2, 7, 11, 17, 22, 28],
+   "catch_type": ["crime", "crime", "crime", "crime", "crime", "crime"],
+   "catch_cutoff": 3,
+   "survey_link": "https://cuboulder.qualtrics.com/jfe/form/SV_6V8B9kbRPas2Ksm",
+   "reinstruct_at": -1,
+   "between": {
+      "factors": ["evidence", "question", "rating"],
+      "levels": [["random","credible"], [["bard"]], [true]],
+      "conditions": [[2,1,1],[2,1,1]],
+      "n_per_cell": 50
+   },
+   "within": {
+      "factors": ["capstone"],
+      "levels": [[false]],
+      "conditions": [[1]],
+      "counts": [31],
+      "sequence": "blocked"
+   }
+}

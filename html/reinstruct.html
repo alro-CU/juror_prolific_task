@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Bootstrap core CSS -->
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="/css/login.css" rel="stylesheet">
+  <link href="/css/style.css" rel="stylesheet">
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+  <script type="text/javascript" src="/js/instructions.js"></script>
+
+  <!-- <script src="/js/jquery.cookie.js"></script> -->
+  <title>Duke Legal Decision-Making Study</title>
+</head>
+<body>
+  <div class="instructions">
+    <h2> Additional instructions </h2>
+    <br>
+    <p>We have new information about the remaining scenarios:</p>
+    <p><b>Both the defense and the prosecution conducted thorough investigations
+      of each case, and all of the evidence found by both sides will be shown.</b><p>
+    <p>No evidence from either side was ommitted or ruled inadmissable in any of the following scenarios.
+      This means that if the prosecution presents little or no evidence of the defendent's guilt,
+       then the prosecution had little to no evidence for the original criminal charge.</p>
+    <p>Similarly, if the defense presents no evidence, then the defense did not
+      find any evidence against the criminal charge.</p>
+  </div>
+  <br>
+
+  <div class="container center">
+  <a class="btn btn-primary btn-lg" role="button" id="moveon" style="margin: auto">
+    Continue &raquo;</a>
+  </div>
+
+  <script>
+  $("#moveon").click( function() {
+    $("#moveon").attr("disabled","");
+    $.get("/reinstructed", function(resp) {
+        $.get("/next", function(resp) {
+          window.location.href = '/';
+        });
+      });
+  });
+  </script>
+
+
+</body>
+</html>

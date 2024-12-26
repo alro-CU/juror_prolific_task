@@ -1,0 +1,93 @@
+.textBox {
+    height:120px;
+    margin-top: 2px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    -webkit-transition: background-color .3s ease;
+    -moz-transition: background-color .3s ease;
+    -o-transition: background-color .3s ease;
+    transition: background-color .3s ease;
+    margin: 10px;
+}
+
+.obscured {
+    background-color: gray;
+    -webkit-transition: background-color .3s ease-in;
+    -moz-transition: background-color .3s ease-in;
+    -o-transition: background-color .3s ease-in;
+    transition: background-color .3s ease-in;
+}
+
+.ui-slider {
+    margin: 10px;
+    width: 400px;
+}
+
+.slider {
+    display: inline-block;
+}
+
+p.slider {
+    font-size: 100%;
+    vertical-align: 55%;
+    margin-bottom: 40px;
+}
+
+#tooshort {
+  padding-left: 30px;
+}
+
+.evidence {
+    margin-top: 30px;
+    /*padding-bottom: 30px;*/
+    margin-bottom: 40px;
+}
+
+.text {
+    font-size: 120%;
+    margin: 10px;
+}
+
+li{
+    margin: 10px 0;
+    font-size: 120%;
+}
+
+.variable {
+    font-size: 120%;
+    margin: 10px;
+    color: black;
+    text-align: center;
+}
+
+.Absolute-Center {
+    height: 25%;
+    margin: auto;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+}
+
+#questions {
+    font-size: 16px;
+    min-height: 150px;
+    min-width: 700px;
+}
+
+.jumbotron {
+    min-width: 600px;
+}
+
+.center{
+  margin: 0 auto;
+  text-align: center;
+}
+
+.page {
+  display: none;
+  position: relative;
+}
+
+#cover {
+    visibility: hidden;
+}

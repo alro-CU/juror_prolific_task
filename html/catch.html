@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/redmond/jquery-ui.min.css"></link>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+  <!-- <script src="/js/jquery.cookie.js"></script> -->
+  <!-- <script src="/js/mustache.js"></script> -->
+  <!-- <script type="text/javascript" src="/js/catch.js"></script> -->
+  <title>Duke Legal Decision Making Study</title>
+  <!-- Bootstrap core CSS -->
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="/css/style.css" rel="stylesheet">
+
+</head>
+<body>
+
+<div class="jumbotron">
+  <div class="container" id="base_descr">
+    <p>Comprehension check</p>
+  </div>
+</div>
+
+<br>
+
+<div class="container" id="evq_present">
+</div>
+<script>
+
+$.ajaxSetup({
+  error: function (x, status, error) {
+    window.location.href ="/html/crashout.html";
+  }
+});
+
+function assembleButton(ind,txt) {
+  return "<div class=\"radio\"><label><input type=\"radio\" name=\"evmc\" value=" +
+   ind + ">" + txt + "</label></div>";
+}
+
+$.get("/catchOptions", function(data, status, jqobj) {
+  if (data.type=="evidence") {
+    $("#evq_present").append("<p>Which piece of evidence is present in this scenario?</p>")
+  } else if (data.type=="crime") {
+    $("#evq_present").append("<p>Which crime occurred in the this scenario?</p>")
+  }
+
+  var mcq = ""
+  for (var i=0; i < data.choices.length; i++) {
+    mcq += assembleButton(i,data.choices[i]);
+  }
+  $("#evq_present").append(mcq)
+});
+</script>
+
+<br>
+<br>
+<div class="container">
+<a class="btn btn-primary btn-lg" role="button" id="answer">
+  Submit &raquo;</a>
+</div>
+
+<script>
+$("#answer").click( function() {
+  $("#answer").attr("disabled","");
+  var ans = $('input[name=evmc]:checked').val();
+  if (ans) {
+    $.post("/release",{"ans": ans}, function(thisWrong) {
+      console.log(thisWrong)
+      if (thisWrong) {
+        alert("Incorrect");
+      } else if (!thisWrong) {
+        alert("Correct");
+      }
+      $.get("/next", function(resp) {
+        window.location.href = '/';
+      });
+    });
+  } else {
+    alert("Please make a selection before proceeding.")
+    $("#answer").removeAttr("disabled");
+  }
+});
+</script>
+
+</body>
+</html>

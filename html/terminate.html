@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/redmond/jquery-ui.min.css"></link>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+  <title>CU Boulder Legal Decision Making Study</title>
+  <!-- Bootstrap core CSS -->
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="/css/login.css" rel="stylesheet">
+
+  <style>
+  div.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center
+  }
+  </style>
+</head>
+<body>
+  <div class="container instructions">
+    <p><a href="https://app.prolific.com/submissions/complete?cc=C1EA5HQO">Use this link to return to Prolific.</a>
+    Please return your submission to avoid a rejection.</p>
+  </div>
+  
+  
+
+  <script>
+  $.get("terminateReason", function(data, status) {
+    $(".container.instructions").prepend(data);
+  })
+  </script>
+
+</body>
+</html>
